@@ -8,11 +8,12 @@ var routes = require('./routes')
 
 const app = express()
 
-routes(app)
 
 app.use(express.static(path.join(__dirname,'../public')))
 
 app.use(bodyParser.json())
+
+routes(app)
 
 if (require.main === module) {
   app.set('port', 8080)
