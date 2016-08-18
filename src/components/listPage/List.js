@@ -5,10 +5,12 @@ import Nav from '../common/Nav'
 module.exports = React.createClass({
   render: function() {
     return (
-      <div>
-        <Nav />
+      <div className='container-fluid'>
+      <div className='col-lg-4'>
 
+        <Nav />
         <p>the list you selected will be displayed here</p>
+      </div>
       </div>
     )
   }
