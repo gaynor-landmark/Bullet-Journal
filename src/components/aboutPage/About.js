@@ -7,11 +7,12 @@ module.exports = React.createClass({
   render : function () {
     console.log('rendering IndexPage')
     return (
-        <div className='col-lg-4 col-lg-offset-1'>
+  <div className='container-fluid'>
+        <div className='col-lg-4'>
           <Nav />
           <h1>About this journal</h1>
         </div>
-
+        </div>
     )
   }
 })
