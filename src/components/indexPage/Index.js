@@ -8,7 +8,7 @@ module.exports = React.createClass({
     return (
       <div className='container-fluid'>
         <div className='col-lg-4'>
-          <Nav />
+          
           <h1>INDEX</h1>
         </div>
       </div>

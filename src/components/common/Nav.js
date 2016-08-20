@@ -8,7 +8,7 @@ module.exports = React.createClass({
     return (
       <div>
         <ul className="nav nav-tabs" role="tablist">
-          <li className="active"><Link to='/'>List Index</Link></li>
+          <li><Link to='/'>List Index</Link></li>
           <li><Link to='/theList'>Selected List</Link></li>
           <li><Link to='/About'>About</Link></li>
         </ul>

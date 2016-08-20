@@ -8,8 +8,10 @@ import Nav from './common/Nav'
 module.exports = React.createClass({
   render: function(){
     return (
-      <Index />
-      
+      <div>
+      <Nav />
+        <Index />
+      </div>
     )
   }
 })

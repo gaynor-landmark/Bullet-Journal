@@ -2,25 +2,26 @@
 import React from 'react'
 import Nav from '../common/Nav'
 import Item from '../common/Item'
+import getRequest from '../../getRequest'
 
-var testList = [
-  {
-    itemText: "index list item  1",
-    date: new Date("2016-07-21")
-  },
-  {
-    itemText: "index list item  10",
-    date: new Date("2016-07-23")
-  },
-  {
-    itemText: "index list item  100",
-    date: new Date("2016-07-22")
-  }
-]
+
+var testList = []
+var url = 'http://localhost:8080'
 
 module.exports = React.createClass({
+  componentDidMount: function() {
+      // get all the list items from the database
+      console.log('componentDidMount', url)
+      getRequest(url + '/testList', this.dbSetState)
+    },
+    dbSetState: function (data, err) {
+     console.log('setstate',err, data)
+    testList = data
+    this.setState({items: data})
+  },
 
   render: function() {
+    console.log('state', this.State, testList)
     var rows = testList
       .map(function(item){
         return <Item key={item.itemText} itemText={item.itemText}/>
