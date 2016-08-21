@@ -1,7 +1,7 @@
 "use strict"
 import React from 'react'
 import { Link } from 'react-router'
-import Nav from '../common/Nav'
+
 import Item from '../common/Item'
 import getRequest from '../../getRequest'
 
