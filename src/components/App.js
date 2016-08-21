@@ -8,8 +8,7 @@ import Nav from './common/Nav'
 module.exports = React.createClass({
   render: function(){
     return (
-      <div>
-      <Nav />
+      <div className='container-fluid'>
         <Index />
       </div>
     )

@@ -1,5 +1,6 @@
 "use strict"
 import React from 'react'
+import { Link } from 'react-router'
 import Nav from '../common/Nav'
 import Item from '../common/Item'
 import getRequest from '../../getRequest'
@@ -11,25 +12,28 @@ var url = 'http://localhost:8080'
 module.exports = React.createClass({
   componentDidMount: function() {
       // get all the list items from the database
-      console.log('componentDidMount', url)
       getRequest(url + '/testList', this.dbSetState)
     },
     dbSetState: function (data, err) {
-     console.log('setstate',err, data)
     testList = data
     this.setState({items: data})
   },
 
   render: function() {
-    console.log('state', this.State, testList)
     var rows = testList
       .map(function(item){
         return <Item key={item.itemText} itemText={item.itemText}/>
       })
     return (
       <div className='container-fluid'>
-        <div className='col-lg-4'>
-          <Nav />
+        <div className='col-lg-4' id='list'>
+          <div>
+            <ul className="nav nav-tabs" role="tablist">
+              <li ><Link to='/'>List Index</Link></li>
+              <li className='active'><Link to='/theList'>Selected List</Link></li>
+              <li id='aboutTab'><Link to='/About'>About</Link></li>
+            </ul>
+          </div>
           <table width='100%' className='table'>
             <thead>
               <tr>
